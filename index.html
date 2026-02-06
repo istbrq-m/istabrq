@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Istabrq Muhammad - محترفة تكنولوجيا المعلومات</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #ffffff;
+            color: #2c3e50;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-animation span {
+            position: absolute;
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #667eea22, #764ba222);
+            animation: move 25s linear infinite;
+            border-radius: 50%;
+        }
+
+        .bg-animation span:nth-child(1) {
+            top: 20%;
+            left: 20%;
+            animation-delay: 0s;
+        }
+
+        .bg-animation span:nth-child(2) {
+            top: 40%;
+            left: 60%;
+            animation-delay: 2s;
+        }
+
+        .bg-animation span:nth-child(3) {
+            top: 60%;
+            left: 30%;
+            animation-delay: 4s;
+        }
+
+        .bg-animation span:nth-child(4) {
+            top: 80%;
+            left: 70%;
+            animation-delay: 6s;
+        }
+
+        .bg-animation span:nth-child(5) {
+            top: 30%;
+            left: 80%;
+            animation-delay: 8s;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.3;
+            }
+            50% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+            animation: slideDown 0.5s ease-out;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            animation: rotate 3s ease-in-out infinite;
+            transition: transform 0.3s;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes rotate {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(5deg);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                filter: brightness(1);
+            }
+            50% {
+                filter: brightness(1.2);
+            }
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea15, #764ba215);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid #667eea30;
+            animation: fadeInUp 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .stat-card:nth-child(1) { animation-delay: 0.1s; }
+        .stat-card:nth-child(2) { animation-delay: 0.2s; }
+        .stat-card:nth-child(3) { animation-delay: 0.3s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        /* Section */
+        section {
+            margin: 4rem 0;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #2c3e50;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            right: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #667eea, #764ba2);
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+            padding-right: calc(50% + 2rem);
+            animation: slideInRight 0.6s ease-out;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .timeline-item:nth-child(even) {
+            padding-right: 0;
+            padding-left: calc(50% + 2rem);
+            animation: slideInLeft 0.6s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .timeline-content {
+            background: linear-gradient(135deg, #667eea15, #764ba215);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(102, 126, 234, 0.2);
+            transition: all 0.3s;
+            border: 2px solid #667eea30;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+        }
+
+        .timeline-content h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .timeline-content .year {
+            color: #764ba2;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .timeline-content ul {
+            list-style: none;
+            padding-right: 1rem;
+        }
+
+        .timeline-content li {
+            margin: 0.5rem 0;
+            padding-right: 1.5rem;
+            position: relative;
+            color: #555;
+        }
+
+        .timeline-content li::before {
+            content: '✓';
+            position: absolute;
+            right: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, #667eea15, #764ba215);
+            padding: 2rem;
+            border-radius: 15px;
+            transition: all 0.3s;
+            border: 2px solid #667eea30;
+            animation: zoomIn 0.5s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .skill-card:nth-child(1) { animation-delay: 0.1s; }
+        .skill-card:nth-child(2) { animation-delay: 0.2s; }
+        .skill-card:nth-child(3) { animation-delay: 0.3s; }
+        .skill-card:nth-child(4) { animation-delay: 0.4s; }
+        .skill-card:nth-child(5) { animation-delay: 0.5s; }
+        .skill-card:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+        }
+
+        .skill-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .skill-card ul {
+            list-style: none;
+        }
+
+        .skill-card li {
+            padding: 0.5rem 0;
+            color: #555;
+            border-bottom: 1px solid #667eea20;
+            transition: all 0.3s;
+        }
+
+        .skill-card li:hover {
+            padding-right: 10px;
+            color: #667eea;
+        }
+
+        /* Certificates */
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .certificate-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 5px 25px rgba(102, 126, 234, 0.3);
+            animation: flipIn 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .certificate-card:nth-child(1) { animation-delay: 0.1s; }
+        .certificate-card:nth-child(2) { animation-delay: 0.2s; }
+        .certificate-card:nth-child(3) { animation-delay: 0.3s; }
+        .certificate-card:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes flipIn {
+            from {
+                opacity: 0;
+                transform: rotateY(90deg);
+            }
+            to {
+                opacity: 1;
+                transform: rotateY(0);
+            }
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-10px) rotateZ(2deg);
+            box-shadow: 0 15px 50px rgba(102, 126, 234, 0.5);
+        }
+
+        .certificate-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .certificate-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        /* Contact */
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            background: linear-gradient(135deg, #667eea15, #764ba215);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid #667eea30;
+            min-width: 250px;
+            animation: bounceIn 0.6s ease-out;
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .contact-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+            border-color: #667eea;
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .contact-item h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item a {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .logo-img {
+                height: 40px;
+            }
+
+            .timeline::before {
+                right: 20px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                padding-right: 0;
+                padding-left: 3rem;
+            }
+
+            .skills-grid,
+            .certificates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+
+        /* Scroll Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="C:\Users\User\OneDrive\Desktop\image\device.png" alt="Logo" class="logo-img">
+        </div>
+        <ul>
+            <li><a href="#about">نبذة عني</a></li>
+            <li><a href="#education">التعليم</a></li>
+            <li><a href="#skills">المهارات</a></li>
+            <li><a href="#certificates">الشهادات</a></li>
+            <li><a href="#contact">التواصل</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Istabrq Muhammad</h1>
+        <p class="subtitle">محترفة تكنولوجيا المعلومات | BTEC IT Level 3</p>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">1200</div>
+                <div class="stat-label">ساعة تدريبية</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">17</div>
+                <div class="stat-label">وحدة دراسية</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">4</div>
+                <div class="stat-label">شهادات مهنية</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- About Section -->
+        <section id="about" class="reveal">
+            <h2>نبذة عني</h2>
+            <div style="text-align: center; font-size: 1.2rem; color: #555; max-width: 800px; margin: 0 auto; line-height: 1.8;">
+                طالبة متخصصة في تكنولوجيا المعلومات، أدرس برنامج BTEC IT من بيرسون. أنجزت المستوى الثاني بنجاح (480 ساعة تدريبية)، وعلى وشك إكمال المستوى الثالث (720 ساعة) خلال شهرين. أمتلك خبرة واسعة في تطوير الويب، تطوير التطبيقات، الأمن السيبراني، والذكاء الاصطناعي عبر ثلاث سنوات من الدراسة العملية المكثفة.
+            </div>
+        </section>
+
+        <!-- Education Timeline -->
+        <section id="education" class="reveal">
+            <h2>المسار التعليمي</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>المستوى الثاني - BTEC IT</h3>
+                        <div class="year">الصف العاشر | 480 ساعة تدريبية</div>
+                        <ul>
+                            <li>استخدام تكنولوجيا المعلومات لدعم المعلومات والاتصالات</li>
+                            <li>نمذجة البيانات وجداول البيانات</li>
+                            <li>مقدمة إلى شبكات الحاسوب</li>
+                            <li>مقدمة في البرمجة</li>
+                            <li>مقدمة للرسومات الرقمية والرسوم المتحركة</li>
+                            <li>مقدمة لتطوير مواقع الويب</li>
+                            <li>مقدمة في التطبيقات</li>
+                            <li>مقدمة في تصميم الألعاب</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>المستوى الثالث - BTEC IT</h3>
+                        <div class="year">الصف الأول ثانوي | 720 ساعة تدريبية</div>
+                        <ul>
+                            <li>أنظمة تكنولوجيا المعلومات - الاستراتيجية والإدارة والبنية الأساسية</li>
+                            <li>تطوير المواقع الإلكترونية</li>
+                            <li>تطوير تطبيقات الهاتف المحمول</li>
+                            <li>تطوير ألعاب الحاسوب</li>
+                            <li>الدعم الفني لتكنولوجيا المعلومات</li>
+                            <li>الأمن السيبراني وإدارة الحوادث</li>
+                            <li>مقدمة إلى الذكاء الاصطناعي (AI)</li>
+                            <li>البرمجة المتقدمة</li>
+                            <li>إدارة مشاريع تكنولوجيا المعلومات</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="reveal">
+            <h2>المهارات التقنية</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>🌐 تطوير الويب</h3>
+                    <ul>
+                        <li>HTML, CSS, JavaScript</li>
+                        <li>تصميم واجهات المستخدم</li>
+                        <li>تطوير المواقع المتجاوبة</li>
+                        <li>تجربة المستخدم (UX/UI)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>📱 تطوير التطبيقات</h3>
+                    <ul>
+                        <li>تطبيقات الهاتف المحمول</li>
+                        <li>تطوير الألعاب</li>
+                        <li>البرمجة الكائنية</li>
+                        <li>إدارة المشاريع</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>🔒 الأمن السيبراني</h3>
+                    <ul>
+                        <li>إدارة الحوادث الأمنية</li>
+                        <li>حماية البيانات</li>
+                        <li>تحليل المخاطر</li>
+                        <li>البروتوكولات الأمنية</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>🤖 الذكاء الاصطناعي</h3>
+                    <ul>
+                        <li>مفاهيم التعلم الآلي</li>
+                        <li>معالجة البيانات</li>
+                        <li>تطبيقات AI</li>
+                        <li>التحليل الذكي</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>🖥️ البنية التحتية</h3>
+                    <ul>
+                        <li>شبكات الحاسوب</li>
+                        <li>إدارة الأنظمة</li>
+                        <li>الدعم الفني</li>
+                        <li>استراتيجيات IT</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>📊 تحليل البيانات</h3>
+                    <ul>
+                        <li>نمذجة البيانات</li>
+                        <li>جداول البيانات المتقدمة</li>
+                        <li>التحليل الإحصائي</li>
+                        <li>تصور البيانات</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section id="certificates" class="reveal">
+            <h2>الشهادات </h2>
+            <div class="certificates-grid">
+                <div class="certificate-card">
+                    <div class="certificate-icon">🏆</div>
+                    <h3>دبلوم BTEC</h3>
+                    <p>المستوى 2 من بيرسون</p>
+                </div>
+
+                <div class="certificate-card">
+                    <div class="certificate-icon">🎓</div>
+                    <h3>دبلوم BTEC</h3>
+                    <p>المستوى 3 من بيرسون</p>
+                </div>
+
+                <div class="certificate-card">
+                    <div class="certificate-icon">📜</div>
+                    <h3>شهادات مزاولة المهنة</h3>
+                    <p>4 شهادات تخصصية</p>
+                </div>
+
+                <div class="certificate-card">
+                    <div class="certificate-icon">🎖️</div>
+                    <h3>الثانوية العامة</h3>
+                    <p>التخرج القادم</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="reveal">
+            <h2>تواصل معي</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <h3>البريد الإلكتروني</h3>
+                    <a href="mailto:estbrqmuhammadhlalat@gmail.com">estbrqmuhammadhlalat@gmail.com</a>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <h3>الهاتف</h3>
+                    <a href="tel:+962786410756">0786410756</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Istabrq Muhammad. جميع الحقوق محفوظة.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">محترفة تكنولوجيا المعلومات | BTEC IT</p>
+    </footer>
+
+    <script>
+        // Scroll Reveal Animation
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', reveal);
+        reveal(); // Initial check
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation to stats on scroll
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    const finalNumber = parseInt(statNumber.textContent);
+                    let currentNumber = 0;
+                    const increment = finalNumber / 50;
+                    
+                    const timer = setInterval(() => {
+                        currentNumber += increment;
+                        if (currentNumber >= finalNumber) {
+                            statNumber.textContent = finalNumber;
+                            clearInterval(timer);
+                        } else {
+                            statNumber.textContent = Math.floor(currentNumber);
+                        }
+                    }, 30);
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stat-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
